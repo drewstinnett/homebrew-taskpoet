@@ -5,29 +5,29 @@
 class Taskpoet < Formula
   desc "Alternative to the awesome TaskWarrior, but in Go, with some additional stuff I find useful"
   homepage "https://github.com/drewstinnett/taskpoet"
-  version "0.0.3"
+  version "0.0.4"
   license "BSD-2-Clause"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/drewstinnett/taskpoet/releases/download/v0.0.3/taskpoet-0.0.3_macOS_amd64.tar.gz"
-      sha256 "cc9bd75bcda8540fe18c5c0814782dd40cab581ba57dc6426d2754f23073a683"
+      url "https://github.com/drewstinnett/taskpoet/releases/download/v0.0.4/taskpoet-0.0.4_macOS_amd64.tar.gz"
+      sha256 "6278c52f3cec2f1afd6a640ed9bbc8e96fb097670d3275bb5f6b6b87c98ab3ee"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/drewstinnett/taskpoet/releases/download/v0.0.3/taskpoet-0.0.3_macOS_arm64.tar.gz"
-      sha256 "96df9a1bb4864576b7b54998ae2c5e5247716ddb2348d44b08ac12a8c8d3b76e"
+      url "https://github.com/drewstinnett/taskpoet/releases/download/v0.0.4/taskpoet-0.0.4_macOS_arm64.tar.gz"
+      sha256 "b299db100aaaf5cd6d51d611bf31efdd4c8604ac63090836c2b82253f2af012d"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/drewstinnett/taskpoet/releases/download/v0.0.3/taskpoet-0.0.3_linux_amd64.tar.gz"
-      sha256 "33301c45fc12cd82df8ba7fda365d2346ff879f27e1b8c1b36a0c8e282ab85ad"
+      url "https://github.com/drewstinnett/taskpoet/releases/download/v0.0.4/taskpoet-0.0.4_linux_amd64.tar.gz"
+      sha256 "2d470bc3ec9f3487239ec8ef1fe6a80d27e29bc95f92d476c8325579c4370d6d"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/drewstinnett/taskpoet/releases/download/v0.0.3/taskpoet-0.0.3_linux_arm64.tar.gz"
-      sha256 "6b9190027cef83c76b8ade32e0de18ace553a43df675620daacb087f16cc6b3a"
+      url "https://github.com/drewstinnett/taskpoet/releases/download/v0.0.4/taskpoet-0.0.4_linux_arm64.tar.gz"
+      sha256 "53912bc01052a3b45c77f7124c49e8ff562b58f35b3f6b11549bc54bf0ad8702"
     end
   end
 
