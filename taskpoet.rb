@@ -5,21 +5,21 @@
 class Taskpoet < Formula
   desc "Alternative to the awesome TaskWarrior, but in Go, with some additional stuff I find useful"
   homepage "https://github.com/drewstinnett/taskpoet"
-  version "0.0.9"
+  version "0.0.11"
   license "BSD-2-Clause"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/drewstinnett/taskpoet/releases/download/v0.0.9/taskpoet-0.0.9_macOS_arm64.tar.gz"
-      sha256 "9862d00b8fc3409528bdba354eceed275d6d2ae6ffa6d153597969c481aad181"
+    if Hardware::CPU.intel?
+      url "https://github.com/drewstinnett/taskpoet/releases/download/v0.0.11/taskpoet-0.0.11_darwin_amd64.tar.gz"
+      sha256 "78d0db08ff6738c50800c548ec200934fb23ee70f7d089c90d5db2908ec1fa7d"
 
       def install
         bin.install "taskpoet"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/drewstinnett/taskpoet/releases/download/v0.0.9/taskpoet-0.0.9_macOS_amd64.tar.gz"
-      sha256 "0a25cde0599d0f700f91b5bfce64d356d5771caa904f9bda6c06ddb7189eafab"
+    if Hardware::CPU.arm?
+      url "https://github.com/drewstinnett/taskpoet/releases/download/v0.0.11/taskpoet-0.0.11_darwin_arm64.tar.gz"
+      sha256 "452bada327ae3509ac03a80060df0d860b5bdd96a1a1e2e953328bc3ce6ca5dc"
 
       def install
         bin.install "taskpoet"
@@ -28,17 +28,17 @@ class Taskpoet < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/drewstinnett/taskpoet/releases/download/v0.0.9/taskpoet-0.0.9_linux_arm64.tar.gz"
-      sha256 "4625b4adc553750dc5a869b1b7d2581f9e1962ca99d5c7d78103ad9cbdebe22a"
+    if Hardware::CPU.intel?
+      url "https://github.com/drewstinnett/taskpoet/releases/download/v0.0.11/taskpoet-0.0.11_linux_amd64.tar.gz"
+      sha256 "fa087f65ef3fce55e404041fad2527cccbbff4fc25b5c065993d4b2072ef8c1d"
 
       def install
         bin.install "taskpoet"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/drewstinnett/taskpoet/releases/download/v0.0.9/taskpoet-0.0.9_linux_amd64.tar.gz"
-      sha256 "4200edb61839d7c623374148eeff55ced85d8459975d1e12ba638d64fc0bf705"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/drewstinnett/taskpoet/releases/download/v0.0.11/taskpoet-0.0.11_linux_arm64.tar.gz"
+      sha256 "86d8e173840b8b3aba91d316bd26153ebad6f11afa5118e22d48fdec7d2b9b11"
 
       def install
         bin.install "taskpoet"
@@ -46,10 +46,11 @@ class Taskpoet < Formula
     end
   end
 
-  def caveats; <<~EOS
-    Add the following in your ~/.zshrc or ~/.profile for faster typin':
+  def caveats
+    <<~EOS
+      Add the following in your ~/.zshrc or ~/.profile for faster typin':
 
-      alias tp="#{opt_bin}/taskpoet"
-  EOS
+        alias tp="#{opt_bin}/taskpoet"
+    EOS
   end
 end
