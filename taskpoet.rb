@@ -5,43 +5,55 @@
 class Taskpoet < Formula
   desc "Alternative to the awesome TaskWarrior, but in Go, with some additional stuff I find useful"
   homepage "https://github.com/drewstinnett/taskpoet"
-  version "0.0.11"
+  version "0.1.2"
   license "BSD-2-Clause"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/drewstinnett/taskpoet/releases/download/v0.0.11/taskpoet-0.0.11_darwin_amd64.tar.gz"
-      sha256 "78d0db08ff6738c50800c548ec200934fb23ee70f7d089c90d5db2908ec1fa7d"
+      url "https://github.com/drewstinnett/taskpoet/releases/download/v0.1.2/taskpoet-0.1.2_darwin_amd64.tar.gz"
+      sha256 "e966778103b82114d49ee322032e17c5e00ec6d68fa09974ba3217fe8f3f0dd7"
 
       def install
         bin.install "taskpoet"
+        bash_completion.install "completions/taskpoet.bash" => "taskpoet"
+        zsh_completion.install "completions/taskpoet.zsh" => "_taskpoet"
+        fish_completion.install "completions/taskpoet.fish"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/drewstinnett/taskpoet/releases/download/v0.0.11/taskpoet-0.0.11_darwin_arm64.tar.gz"
-      sha256 "452bada327ae3509ac03a80060df0d860b5bdd96a1a1e2e953328bc3ce6ca5dc"
+      url "https://github.com/drewstinnett/taskpoet/releases/download/v0.1.2/taskpoet-0.1.2_darwin_arm64.tar.gz"
+      sha256 "ffbd683f2d4b48bdc38f9734eef91828997c2dc60e6ff33500ecac685320e222"
 
       def install
         bin.install "taskpoet"
+        bash_completion.install "completions/taskpoet.bash" => "taskpoet"
+        zsh_completion.install "completions/taskpoet.zsh" => "_taskpoet"
+        fish_completion.install "completions/taskpoet.fish"
       end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/drewstinnett/taskpoet/releases/download/v0.0.11/taskpoet-0.0.11_linux_amd64.tar.gz"
-      sha256 "fa087f65ef3fce55e404041fad2527cccbbff4fc25b5c065993d4b2072ef8c1d"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/drewstinnett/taskpoet/releases/download/v0.1.2/taskpoet-0.1.2_linux_arm64.tar.gz"
+      sha256 "2ead796fecac25520d3d4cb78b88bf885f1dd8ad8ef0a9068c3a8ef527277af9"
 
       def install
         bin.install "taskpoet"
+        bash_completion.install "completions/taskpoet.bash" => "taskpoet"
+        zsh_completion.install "completions/taskpoet.zsh" => "_taskpoet"
+        fish_completion.install "completions/taskpoet.fish"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/drewstinnett/taskpoet/releases/download/v0.0.11/taskpoet-0.0.11_linux_arm64.tar.gz"
-      sha256 "86d8e173840b8b3aba91d316bd26153ebad6f11afa5118e22d48fdec7d2b9b11"
+    if Hardware::CPU.intel?
+      url "https://github.com/drewstinnett/taskpoet/releases/download/v0.1.2/taskpoet-0.1.2_linux_amd64.tar.gz"
+      sha256 "54a8e3d433f8b5f1ec66de1e49ea5d2040fa01fa4364726ba56a94943cc5703b"
 
       def install
         bin.install "taskpoet"
+        bash_completion.install "completions/taskpoet.bash" => "taskpoet"
+        zsh_completion.install "completions/taskpoet.zsh" => "_taskpoet"
+        fish_completion.install "completions/taskpoet.fish"
       end
     end
   end
