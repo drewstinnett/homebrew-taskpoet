@@ -5,13 +5,13 @@
 class Taskpoet < Formula
   desc "Alternative to the awesome TaskWarrior, but in Go, with some additional stuff I find useful"
   homepage "https://github.com/drewstinnett/taskpoet"
-  version "0.1.2"
+  version "0.2.0"
   license "BSD-2-Clause"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/drewstinnett/taskpoet/releases/download/v0.1.2/taskpoet-0.1.2_darwin_amd64.tar.gz"
-      sha256 "e966778103b82114d49ee322032e17c5e00ec6d68fa09974ba3217fe8f3f0dd7"
+      url "https://github.com/drewstinnett/taskpoet/releases/download/v0.2.0/taskpoet-0.2.0_darwin_amd64.tar.gz"
+      sha256 "e09ceec83a5ab35254feea877e85d90ef1045bed00f6069537c01f664ee1b15d"
 
       def install
         bin.install "taskpoet"
@@ -21,8 +21,8 @@ class Taskpoet < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/drewstinnett/taskpoet/releases/download/v0.1.2/taskpoet-0.1.2_darwin_arm64.tar.gz"
-      sha256 "ffbd683f2d4b48bdc38f9734eef91828997c2dc60e6ff33500ecac685320e222"
+      url "https://github.com/drewstinnett/taskpoet/releases/download/v0.2.0/taskpoet-0.2.0_darwin_arm64.tar.gz"
+      sha256 "4670dfcad755983049469d2a734b269fb94027dad9a5b4c4943d62e383296866"
 
       def install
         bin.install "taskpoet"
@@ -35,8 +35,8 @@ class Taskpoet < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/drewstinnett/taskpoet/releases/download/v0.1.2/taskpoet-0.1.2_linux_arm64.tar.gz"
-      sha256 "2ead796fecac25520d3d4cb78b88bf885f1dd8ad8ef0a9068c3a8ef527277af9"
+      url "https://github.com/drewstinnett/taskpoet/releases/download/v0.2.0/taskpoet-0.2.0_linux_arm64.tar.gz"
+      sha256 "2c35031149e66e4d574709c65f96e146d9413a932f2a94277abd3490d7b2fa49"
 
       def install
         bin.install "taskpoet"
@@ -46,8 +46,8 @@ class Taskpoet < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/drewstinnett/taskpoet/releases/download/v0.1.2/taskpoet-0.1.2_linux_amd64.tar.gz"
-      sha256 "54a8e3d433f8b5f1ec66de1e49ea5d2040fa01fa4364726ba56a94943cc5703b"
+      url "https://github.com/drewstinnett/taskpoet/releases/download/v0.2.0/taskpoet-0.2.0_linux_amd64.tar.gz"
+      sha256 "e46c6811ddd54576a8ff620abaf0578771117f2ed600f9039127dad9f52ad4b9"
 
       def install
         bin.install "taskpoet"
